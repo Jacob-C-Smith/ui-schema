@@ -1,0 +1,60 @@
+{
+    "$schema"     : "http://json-schema.org/schema",
+    "title"       : "dropdown",
+    "type"        : "object",
+    "description" : "Defines a UI Checkbox",
+    "properties"  : {
+        "type" : {
+            "title"       : "type",
+            "type"        : "string",
+            "default"     : "CHECKBOX",
+            "pattern"     : "CHECKBOX"
+        },
+        "name" : {
+            "title"       : "name",
+            "type"        : "string",
+            "default"     : "checkbox",
+            "minLength"   : 1,
+            "maxLength"   : 255,
+            "description" : "The internal name of the checkbox"
+        },
+        "labels" : {
+            "title"       : "labels",
+            "type"        : "array",
+            "description" : "A list of checkbox labels",
+            "uniqueItems" : true,
+            "items"       : {
+                "oneOf" : [
+                    { "type" : "string" }
+                ] 
+            },
+            "default"     : [ 
+                "Checkbox 1",
+                "Checkbox 2",
+                "Checkbox 3"
+            ]
+        },
+        "index" : {
+            "title"       : "selected item index",
+            "type"        : "integer",
+            "description" : "Is element at index checked?"
+        },
+        "x"    : {
+            "title"       : "x",
+            "type"        : "integer",
+            "default"     : 0,
+            "minLength"   : 0,
+            "description" : "The x coordinate of the checkbox"
+        },
+        "y"    : {
+            "title"       : "y",
+            "type"        : "integer",
+            "default"     : 0,
+            "minLength"   : 0,
+            "maxLength"   : 255,
+            "description" : "The y coordinate of the checkbox"
+        }
+    },
+    "required"    : [ "type", "name", "text", "labels", "x", "y" ]
+}
+

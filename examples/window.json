@@ -1,0 +1,11 @@
+{
+    "$schema": "../window-schema.json",
+    "name": "Window",
+    "height": 480,
+    "width": 640,
+    "elements": [
+        {
+            
+        }
+    ]
+}

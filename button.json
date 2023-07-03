@@ -1,0 +1,45 @@
+{
+    "$schema"     : "http://json-schema.org/schema",
+    "title"       : "button",
+    "type"        : "object",
+    "description" : "Defines a UI Button",
+    "properties"  : {
+        "type" : {
+            "title"   : "type",
+            "type"    : "string",
+            "default" : "BUTTON",
+            "const"   : "BUTTON"
+        },
+        "name" : {
+            "title"       : "name",
+            "type"        : "string",
+            "default"     : "button",
+            "minLength"   : 1,
+            "maxLength"   : 255,
+            "description" : "The internal name of the button"
+        },
+        "text" : {
+            "title"       : "label",
+            "type"        : "string",
+            "default"     : "button",
+            "minLength"   : 0,
+            "maxLength"   : 255,
+            "description" : "The label of the button"
+        },
+        "x"    : {
+            "title"       : "x",
+            "type"        : "integer",
+            "default"     : 0,
+            "minimum"     : 0,
+            "description" : "The x coordinate of the button"
+        },
+        "y"    : {
+            "title"       : "y",
+            "type"        : "integer",
+            "default"     : 0,
+            "minimum"     : 0,
+            "description" : "The y coordinate of the button"
+        }
+    },
+    "required"    : [ "type", "name", "text", "x", "y" ]
+}

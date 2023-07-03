@@ -1,0 +1,45 @@
+{
+    "$schema"     : "http://json-schema.org/schema",
+    "title"       : "element",
+    "type"        : "object",
+    "description" : "Defines a UI Element",
+    "properties"  : {
+        "name" : {
+            "title"       : "name",
+            "type"        : "string",
+            "minLength"   : 1,
+            "maxLength"   : 255,
+            "description" : "The internal name of the element"
+        },
+        "type" : {
+            "title"       : "type",
+            "type"        : "string",
+            "minLength"   : 1,
+            "maxLength"   : 255,
+            "description" : "The type of the element",
+            "enum": [
+                "BUTTON",
+                "CHECKBOX"
+            ]
+        }
+    },
+    "anyOf": [
+        {
+            "if"   : { "properties": { "type": false }},
+            "then" : {
+                "title"       : "Element object",
+                "type"        : "object",
+                "description" : "Defines a UI Element"
+                
+            }
+        },
+        {
+            "if"   : { "properties": { "type" : { "const" : "BUTTON" } } },
+            "then" : { "$ref": "https://ui-schema.g10.app/button.json" }
+        },
+        {
+            "if"   : { "properties": { "type" : { "const" : "CHECKBOX" } } },
+            "then" : { "$ref": "https://ui-schema.g10.app/checkbox.json" }
+        }
+    ]
+}

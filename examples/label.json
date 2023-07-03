@@ -1,0 +1,8 @@
+{
+    "$schema" : "../label-schema.json",
+    "name"    : "label",
+    "type"    : "LABEL",
+    "text"    : "label",
+    "x"       : 0,
+    "y"       : 0
+}

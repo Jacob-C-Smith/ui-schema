@@ -1,0 +1,13 @@
+{
+    "$schema"    : "http://json-schema.org/schema",
+    "title"      : "UI Element",
+    "type"       :"object",
+    "description": "Defines a UI element",
+    "properties" : {
+        "name" : {
+            "title"   : "name",
+            "type"    : "string",
+            "default" : ""
+        }
+    }
+}

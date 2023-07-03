@@ -1,0 +1,55 @@
+{
+    "$schema"     : "http://json-schema.org/schema",
+    "title"       : "Window object",
+    "type"        : "object",
+    "description" : "Defines a UI Window, and its elements",
+    "properties"  : {
+        "name" : {
+            "title"       : "name",
+            "type"        : "string",
+            "default"     : "Window",
+            "minLength"   : 1,
+            "maxLength"   : 64,
+            "description" : "The name of the window"
+        },
+        "width"    : {
+            "title"       : "width",
+            "type"        : "integer",
+            "default"     : 640,
+            "minimum"     : 1,
+            "maximum"     : 65565,
+            "description" : "The width of the window, in pixels"
+        },
+        "height"    : {
+            "title"       : "height",
+            "type"        : "integer",
+            "default"     : 480,
+            "minimum"     : 1,
+            "maximum"     : 65565,
+            "description" : "The height of the window, in pixels"
+        },
+        "elements" : {
+            "title": "elements",
+            "type" : "array",
+            "default" : [
+                
+            ],
+            "items"       : {
+                "oneOf" : [
+                    { "type" : "string" },
+                    { "$ref" : "https://ui-schema.g10.app/label.json" },
+                    { "$ref" : "https://ui-schema.g10.app/button.json" },
+                    { "$ref" : "https://ui-schema.g10.app/checkbox.json" },
+                    { "$ref" : "https://ui-schema.g10.app/dropdown.json" },
+                    { "$ref" : "https://ui-schema.g10.app/radio-schema.json" },
+                    { "$ref" : "https://ui-schema.g10.app/text.json" },
+                    { "$ref" : "https://ui-schema.g10.app/slider.json" },
+                    { "$ref" : "https://ui-schema.g10.app/image.json" }
+                ] 
+            },
+            "uniqueItems": true,
+            "description": "Array of element objects"
+        }
+    },
+    "required"    : [ "name", "width", "height" ]
+}

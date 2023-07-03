@@ -1,0 +1,8 @@
+{
+    "$schema" : "../button-schema.json",
+    "name"    : "button",
+    "text"    : "button",
+    "type"    : "BUTTON",
+    "x"       : 0,
+    "y"       : 0
+}

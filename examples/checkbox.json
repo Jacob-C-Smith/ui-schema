@@ -1,0 +1,17 @@
+{
+    "$schema": "../checkbox-schema.json",
+    "name": "checkbox",
+    "type": "CHECKBOX",
+    "x": 0,
+    "y": 0,
+    "labels": [
+        "Checkbox 1",
+        "Checkbox 2",
+        "Checkbox 3"
+    ],
+    "checked": [
+        false,
+        false,
+        false
+    ]
+}

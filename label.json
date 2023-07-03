@@ -1,0 +1,47 @@
+{
+    "$schema"     : "http://json-schema.org/schema",
+    "title"       : "label",
+    "type"        : "object",
+    "description" : "Defines a UI Label",
+    "properties"  : {
+        "type" : {
+            "title"       : "type",
+            "type"        : "string",
+            "default"     : "LABEL",
+            "pattern"     : "LABEL"
+        },
+        "name" : {
+            "title"       : "name",
+            "type"        : "string",
+            "default"     : "label",
+            "minLength"   : 1,
+            "maxLength"   : 255,
+            "description" : "The internal name of the label"
+        },
+        "text" : {
+            "title"       : "text",
+            "type"        : "string",
+            "default"     : "label",
+            "minLength"   : 0,
+            "maxLength"   : 255,
+            "description" : "The text of the label"
+        },
+        "x"    : {
+            "title"       : "x",
+            "type"        : "integer",
+            "default"     : 0,
+            "minLength"   : 0,
+            "description" : "The x coordinate of the label"
+        },
+        "y"    : {
+            "title"       : "text",
+            "type"        : "integer",
+            "default"     : 0,
+            "minLength"   : 0,
+            "maxLength"   : 255,
+            "description" : "The y coordinate of the label"
+        }
+    },
+    "required"    : [ "type", "name", "text", "x", "y" ]
+}
+
