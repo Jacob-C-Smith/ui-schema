@@ -1,0 +1,202 @@
+{
+    "$schema"     : "http://json-schema.org/draft-07/schema#",
+    "title"       : "UI Config",
+    "type"        : "object",
+    "description" : "Defines a color theme and font properties",
+    "properties"  :
+    {
+        "name" :
+        {
+            "title"       : "name",
+            "description" : "The name of the theme",
+            "type"        : "string",
+            "default"     : "my theme",
+            "minLength"   : 1,
+            "maxLength"   : 255
+        },
+        "primary" :
+        {
+            "title"       : "primary",
+            "description" : "The foreground color (R, G, B)",
+            "type"        : "array",
+            "default"     : [ 0, 0, 0 ],
+            "minItems"    : 3,
+            "maxItems"    : 3,
+            "items"       :
+            [
+                {
+                    "title"       : "primary.red",
+                    "description" : "The intensity of the red channel [0-255]",
+                    "type"        : "integer",
+                    "minimum"     : 0,
+                    "maximum"     : 255
+                },
+                {
+                    "title"       : "primary.green",
+                    "description" : "The intensity of the green channel [0-255]",
+                    "type"        : "integer",
+                    "minimum"     : 0,
+                    "maximum"     : 255
+                },
+                { 
+                    "title"       : "primary.blue",
+                    "description" : "The intensity of the blue channel [0-255]",
+                    "type"        : "integer",
+                    "minimum"     : 0,
+                    "maximum"     : 255
+                }
+            ]
+        },
+        "accent 1" :
+        {
+            "title"       : "accent 1",
+            "description" : "The primary accent color (R, G, B)",
+            "type"        : "array",
+            "default"     : [ 192, 192, 192 ],
+            "minItems"    : 3,
+            "maxItems"    : 3,
+            "items" :
+            [
+                {
+                    "title"       : "accent 1.red",
+                    "description" : "The intensity of the red channel [0-255]",
+                    "type"        : "integer",
+                    "minimum"     : 0,
+                    "maximum"     : 255
+                },
+                {
+                    "title"       : "accent 1.green",
+                    "description" : "The intensity of the green channel [0-255]",
+                    "type"        : "integer",
+                    "minimum"     : 0,
+                    "maximum"     : 255
+                },
+                {
+                    "title"       : "accent 1.blue",
+                    "description" : "The intensity of the blue channel [0-255]",
+                    "type"        : "integer",
+                    "minimum"     : 0,
+                    "maximum"     : 255
+                }
+            ]
+        },
+        "accent 2" :
+        {
+            "title"       : "accent 2",
+            "description" : "The secondary accent color (R, G, B)",
+            "type"        : "array",
+            "default"     : [ 128, 128, 128 ],
+            "minItems"    : 3,
+            "maxItems"    : 3,
+            "items"       :
+            [
+                {
+                    "title"       : "accent 2.red",
+                    "description" : "The intensity of the red channel [0-255]",
+                    "type"        : "integer",
+                    "minimum"     : 0,
+                    "maximum"     : 255
+                },
+                {
+                    "title"       : "accent 2.green",
+                    "description" : "The intensity of the green channel [0-255]",
+                    "type"        : "integer",
+                    "minimum"     : 0,
+                    "maximum"     : 255
+                },
+                {
+                    "title"       : "accent 2.blue",
+                    "description" : "The intensity of the blue channel [0-255]",
+                    "type"        : "integer",
+                    "minimum"     : 0,
+                    "maximum"     : 255
+                }
+            ]
+        },
+        "accent 3" :
+        {
+            "title"       : "accent 3",
+            "description" : "The tertiary accent color (R, G, B)",
+            "type"        : "array",
+            "default"     : [ 0, 128, 255 ],
+            "minItems"    : 3,
+            "maxItems"    : 3,
+            "items"       :
+            [
+                {
+                    "title"       : "accent 3.red",
+                    "description" : "The intensity of the red channel [0-255]",
+                    "type"        : "integer",
+                    "minimum"     : 0,
+                    "maximum"     : 255
+                },
+                {
+                    "title"       : "accent 3.green",
+                    "description" : "The intensity of the green channel [0-255]",
+                    "type"        : "integer",
+                    "minimum"     : 0,
+                    "maximum"     : 255
+                },
+                {
+                    "title"       : "accent 3.blue",
+                    "description" : "The intensity of the blue channel [0-255]",
+                    "type"        : "integer",
+                    "minimum"     : 0,
+                    "maximum"     : 255
+                }
+            ]
+        },
+        "background" :
+        {
+            "title"       : "background",
+            "description" : "The background color (R, G, B)",
+            "type"        : "array",
+            "default"     : [ 255, 255, 255 ],
+            "minItems"    : 3,
+            "maxItems"    : 3,
+            "items"       :
+            [
+                {
+                    "title"       : "background.red",
+                    "description" : "The intensity of the red channel [0-255]",
+                    "type"        : "integer",
+                    "minimum"     : 0,
+                    "maximum"     : 255
+                },
+                {
+                    "title"       : "background.green",
+                    "description" : "The intensity of the green channel [0-255]",
+                    "type"        : "integer",
+                    "minimum"     : 0,
+                    "maximum"     : 255
+                },
+                {
+                    "title"       : "background.blue",
+                    "description" : "The intensity of the blue channel [0-255]",
+                    "type"        : "integer",
+                    "minimum"     : 0,
+                    "maximum"     : 255
+                }
+            ]
+        },
+        "font size" :
+        {
+            "title"       : "font size",
+            "description" : "The size of the font (pt.)",
+            "type"        : "integer",
+            "default"     : 22,
+            "minimum"     : 0,
+            "maximum"     : 100
+        },
+        "font path" :
+        {
+            "title"       : "font path",
+            "description" : "Path to a .ttf font",
+            "default"     : "OpenSans.ttf",
+            "type"        : "string",
+            "minLength"   : 1,
+            "maxLength"   : 255
+        }
+    },
+    "required" : [ "name", "primary", "accent 1", "accent 2", "accent 3", "background", "font size", "font path" ]
+}
