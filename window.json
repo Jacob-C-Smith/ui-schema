@@ -1,55 +1,87 @@
 {
-    "$schema"     : "http://json-schema.org/schema",
-    "title"       : "Window object",
+    "$schema"     : "http://json-schema.org/draft-07/schema#",
+    "title"       : "UI Window",
     "type"        : "object",
     "description" : "Defines a UI Window, and its elements",
-    "properties"  : {
-        "name" : {
+    "properties"  :
+    {
+        "name" :
+        {
             "title"       : "name",
+            "description" : "The name of the window",
             "type"        : "string",
             "default"     : "Window",
             "minLength"   : 1,
-            "maxLength"   : 64,
-            "description" : "The name of the window"
+            "maxLength"   : 64
         },
-        "width"    : {
+        "title" : 
+        {
+            "title"       : "title",
+            "description" : "The title of the window",
+            "type"        : "string",
+            "default"     : "my window",
+            "minLength"   : 1,
+            "maxLength"   : 64
+        },
+        "width" :
+        {
             "title"       : "width",
+            "description" : "The width of the window (px)",
             "type"        : "integer",
             "default"     : 640,
             "minimum"     : 1,
-            "maximum"     : 65565,
-            "description" : "The width of the window, in pixels"
+            "maximum"     : 65565
         },
-        "height"    : {
+        "height" :
+        {
             "title"       : "height",
+            "description" : "The height of the window (px)",
             "type"        : "integer",
             "default"     : 480,
             "minimum"     : 1,
-            "maximum"     : 65565,
-            "description" : "The height of the window, in pixels"
+            "maximum"     : 65565
         },
-        "elements" : {
-            "title": "elements",
-            "type" : "array",
-            "default" : [
-                
-            ],
-            "items"       : {
-                "oneOf" : [
-                    { "type" : "string" },
-                    { "$ref" : "https://ui-schema.g10.app/label.json" },
-                    { "$ref" : "https://ui-schema.g10.app/button.json" },
-                    { "$ref" : "https://ui-schema.g10.app/checkbox.json" },
-                    { "$ref" : "https://ui-schema.g10.app/dropdown.json" },
-                    { "$ref" : "https://ui-schema.g10.app/radio-schema.json" },
-                    { "$ref" : "https://ui-schema.g10.app/text.json" },
-                    { "$ref" : "https://ui-schema.g10.app/slider.json" },
-                    { "$ref" : "https://ui-schema.g10.app/image.json" }
-                ] 
-            },
-            "uniqueItems": true,
-            "description": "Array of element objects"
+        "elements" :
+        {
+            "title"             : "elements",
+            "description"       : "Keys : names :: values : elements",
+            "type"              : "object",
+            "default"           : { "label" : { "type" : "LABEL", "x" : 16, "y" : 16, "text" : "Hello, World!" } },
+            "uniqueItems"       : true,
+            "patternProperties" :
+            {
+                ".*" : 
+                {
+                    "type" : "object",
+                    "properties" : {
+                        "type" : {
+                            "type" : "string",
+                            "enum" : [ "LABEL", "BUTTON", "CHECKBOX", "DROPDOWN", "RADIO BUTTON", "TEXTBOX", "SLIDER", "IMAGE" ]
+                        }
+                    },
+                    "required": [ "type" ],
+                    "if" : { "not": { "required": [ "type" ] } },
+                    "then": { },
+                    "else" : { "if" : { "properties": { "type" : { "const" : "LABEL" } } },
+                    "then" : { "$ref" : "https://ui-schema.g10.app/label.json" },
+                    "else" : { "if" : { "properties": { "type" : { "const" : "BUTTON" } } },
+                    "then" : { "$ref" : "https://ui-schema.g10.app/button.json" },
+                    "else" : { "if" : { "properties": { "type" : { "const" : "CHECKBOX" } } },
+                    "then" : { "$ref" : "https://ui-schema.g10.app/checkbox.json" },
+                    "else" : { "if" : { "properties": { "type" : { "const" : "DROPDOWN" } } },
+                    "then" : { "$ref" : "https://ui-schema.g10.app/dropdown.json" },
+                    "else" : { "if" : { "properties": { "type" : { "const" : "RADIO BUTTON" } } },
+                    "then" : { "$ref" : "https://ui-schema.g10.app/radio-button.json" },
+                    "else" : { "if" : { "properties": { "type" : { "const" : "TEXTBOX" } } },
+                    "then" : { "$ref" : "https://ui-schema.g10.app/textbox.json" },
+                    "else" : { "if" : { "properties": { "type" : { "const" : "SLIDER" } } },
+                    "then" : { "$ref" : "https://ui-schema.g10.app/slider.json" },
+                    "else" : { "if" : { "properties": { "type" : { "const" : "IMAGE" } } },
+                    "then" : { "$ref" : "https://ui-schema.g10.app/image.json" },
+                    "else" : { } } } } } } } } }
+                }
+            }
         }
     },
-    "required"    : [ "name", "width", "height" ]
+    "required" : [ "name", "width", "height" ]
 }
